@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+def restAssured="5.3.0",
+jackson="2.15.2"
+
+dependencies {
+    testImplementation ('org.junit.jupiter:junit-jupiter-api:5.8.1',
+            "io.rest-assured:rest-assured:${restAssured}",
+            "com.fasterxml.jackson.core:jackson-databind:${jackson}"
+    )
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
